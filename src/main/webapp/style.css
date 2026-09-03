@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial;
+    background-color: purple;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+.container {
+    background-color:gray;
+    width: 450px;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+h2 {
+    color: black;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+input::placeholder {
+    color: black;
+}
+
+input:hover {
+    background-color: silver;
+}
+
+button {
+    background-color: fuchsia;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: fuchsia;
+}
+
+
+.login {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.login:hover {
+    background-color: white;
+    color: white;
+}

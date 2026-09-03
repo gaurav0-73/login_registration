@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+html,
+body {
+width: 100%;
+height: 100%;
+}
+
+body {
+font-family: Arial, sans-serif;
+}
+
+/* FULL SCREEN IMAGE */
+.container {
+position: relative;
+width: 100vw;
+height: 100vh;
+background-image: url("images/IMG-20250903-WA0308.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+overflow: hidden;
+}
+
+/* DARK OVERLAY */
+.container::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.45);
+z-index: 1;
+}
+
+/* LEFT TEXT */
+.left-content {
+position: absolute;
+top: 50%;
+left: 10%;
+transform: translateY(-50%);
+width: 550px;
+color: white;
+z-index: 2;
+}
+
+.left-content h1 {
+font-size: 55px;
+margin-bottom: 5px;
+}
+
+.left-content h2 {
+font-size: 45px;
+color: #ed1735;
+margin-bottom: 25px;
+}
+
+.left-content p {
+font-size: 20px;
+line-height: 1.6;
+margin-bottom: 30px;
+}
+
+/* LEFT BUTTON */
+.register-btn {
+display: inline-block;
+padding: 15px 25px;
+background-color: #ed0016;
+color: white;
+text-decoration: none;
+font-size: 18px;
+font-weight: bold;
+border-radius: 5px;
+}
+
+.register-btn:hover {
+background-color: #bd0012;
+}
+
+/* RIGHT CARD */
+.login-box {
+position: absolute;
+top: 50%;
+right: 8%;
+transform: translateY(-50%);
+width: 420px;
+padding: 35px 30px;
+background: silver;
+border-radius: 15px;
+text-align: center;
+z-index: 2;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* CLOSE */
+.close {
+position: absolute;
+top: 10px;
+right: 18px;
+font-size: 28px;
+color: #777;
+}
+
+/* CARD TEXT */
+.login-box h3 {
+font-size: 21px;
+margin-bottom: 12px;
+}
+
+.login-box h2 {
+font-size: 25px;
+color: #ed0016;
+margin-bottom: 18px;
+}
+
+/* STATUS */
+.status {
+display: inline-block;
+padding: 7px 16px;
+background-color: #ffe0e5;
+color: #e60016;
+border-radius: 20px;
+font-size: 12px;
+margin-bottom: 25px;
+}
+
+.choose {
+color: #555;
+margin-bottom: 20px;
+}
+
+/* BUTTONS */
+.btn {
+display: block;
+width: 100%;
+padding: 15px;
+margin-top: 15px;
+background-color: #ed0016;
+color: white;
+text-decoration: none;
+font-size: 16px;
+font-weight: bold;
+border-radius: 6px;
+}
+
+.btn:hover {
+background-color: #bd0012;
+}
