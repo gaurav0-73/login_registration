@@ -31,12 +31,10 @@ public class DBConnection {
             return con;
 
         } catch (Exception e) {
-
-            System.out.println("DATABASE CONNECTION FAILED");
-            e.printStackTrace();
-
-            return null;
-        }
+    System.out.println("DATABASE CONNECTION FAILED");
+    e.printStackTrace();
+    throw new RuntimeException("Database connection failed", e);
+}
 
     }
     }
