@@ -26,20 +26,23 @@ public class RegistrationServlet extends HttpServlet {
         String number = req.getParameter("number");
         String gender = req.getParameter("gender");
         String password = req.getParameter("pass");
+        
+        System.out.println("NAME = [" + name + "]");
+        System.out.println("NUMBER = [" + number + "]");
 
         // Validation
         if (name == null || name.trim().isEmpty()
-                || number == null || number.length() != 10) {
+                || number == null || !number.matches("\\d{10}")) {
 
             resp.setContentType("text/html");
 
-            RequestDispatcher rd =req.getRequestDispatcher("RegistrationFail.jsp");
+            RequestDispatcher rd =
+                    req.getRequestDispatcher("RegistrationFail.jsp");
 
             rd.forward(req, resp);
 
             return;
         }
-
         User user = new User();
 
         user.setName(name);
