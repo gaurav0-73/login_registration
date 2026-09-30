@@ -42,7 +42,7 @@
             text-align: center;
 
             border-radius: 15px;
-
+            opacity: 0.75;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
         }
 
