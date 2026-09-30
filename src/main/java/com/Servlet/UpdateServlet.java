@@ -5,7 +5,6 @@ import java.io.IOException;
 
 import com.nit.Dao.UserDao;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -69,17 +68,11 @@ public class UpdateServlet extends HttpServlet {
         // SUCCESS
         if (result) {
 
-            RequestDispatcher rd =
-                    req.getRequestDispatcher("/updateSuccessful.jsp");
-
-            rd.forward(req, resp);
+            resp.sendRedirect("updateSuccessful.jsp");
 
         } else {
 
-            RequestDispatcher rd =
-                    req.getRequestDispatcher("/updateFail.jsp");
-
-            rd.forward(req, resp);
+            resp.sendRedirect("updateFail.jsp");
         }
     }
 }
