@@ -27,8 +27,12 @@ public class RegistrationServlet extends HttpServlet {
         String gender = req.getParameter("gender");
         String password = req.getParameter("pass");
         
-        System.out.println("NAME = [" + name + "]");
-        System.out.println("NUMBER = [" + number + "]");
+       System.out.println("===== REGISTER SERVLET =====");
+       System.out.println("NAME   = [" + name + "]");
+       System.out.println("EMAIL  = [" + email + "]"); 
+       System.out.println("NUMBER = [" + number + "]");
+       System.out.println("GENDER = [" + gender + "]");
+       System.out.println("PASS   = [" + password + "]");
 
         // Validation
         if (name == null || name.trim().isEmpty()
