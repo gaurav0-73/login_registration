@@ -233,5 +233,42 @@ public class UserDao {
 
         return false;
     }
-    
+
+    public boolean isEmailOrNumberExists(String email, String number) {
+
+        String sql = "SELECT COUNT(*) FROM USERS WHERE email=? OR number=?";
+
+        try {
+
+            Connection con = DBConnection.getConnection();
+
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setString(1, email);
+            ps.setString(2, number);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+
+                int count = rs.getInt(1);
+
+                rs.close();
+                ps.close();
+                con.close();
+
+                return count > 0;
+            }
+
+            rs.close();
+            ps.close();
+            con.close();
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
+        return false;
+    }
 }

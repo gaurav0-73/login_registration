@@ -1,0 +1,155 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    /* Background Image */
+    background-image: url("images/IMG-20250903-WA0019.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Main Container */
+.container {
+    width: 450px;
+    padding: 45px 35px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon */
+.icon {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #fff1f2;
+    color: #e11d48;
+
+    font-size: 42px;
+    font-weight: bold;
+
+    border: 2px solid #fecdd3;
+}
+
+/* Main Heading */
+h1 {
+    color: #be123c;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* Sub Heading */
+h2 {
+    color: #374151;
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+/* Paragraph */
+p {
+    color: #6b7280;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Message */
+.message {
+    margin-top: 8px;
+    color: #4b5563;
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.buttons a {
+    text-decoration: none;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+/* Register Button */
+.register-btn {
+    background: #4f46e5;
+    color: white;
+}
+
+.register-btn:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+}
+
+/* Normal Button */
+.btn {
+    background: #f3f4f6;
+    color: #374151;
+
+    border: 1px solid #d1d5db;
+}
+
+.btn:hover {
+    background: #e5e7eb;
+    transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+
+    .container {
+        width: 90%;
+        padding: 35px 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .buttons a {
+        width: 100%;
+    }
+}
+```
