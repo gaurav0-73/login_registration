@@ -1,4 +1,3 @@
-
 <%@ page language="java"
     contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -59,8 +58,15 @@
 
         </form>
 
+        <br><br>
+
+        <!-- Go to Login -->
+        <a href="${pageContext.request.contextPath}/login.html"
+           class="btn">
+            Go to Login
+        </a>
+
     </div>
 
 </body>
-
 </html>
