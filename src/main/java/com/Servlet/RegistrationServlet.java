@@ -20,6 +20,10 @@ public class RegistrationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
+    	
+    	IO.println("===== REGISTER SERVLET CALLED =====");
+
+    	
         String name = req.getParameter("name");
         String email = req.getParameter("email");
         String address = req.getParameter("address");

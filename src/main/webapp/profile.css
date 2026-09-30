@@ -1,0 +1,65 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background-image: url("images/IMG-20250903-WA0130.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+/* Main Profile Container */
+.profile-container {
+    width: 450px;
+    padding: 35px;
+
+    text-align: center;
+
+    background-color: #F3E5AB;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.30);
+    opacity: 0.75;
+
+}
+
+/* Heading */
+.profile-container h1 {
+    color: #5b4b8a;
+
+    font-size: 32px;
+
+    margin-bottom: 25px;
+}
+
+/* Profile Information Box */
+.profile-box {
+    text-align: left;
+}
+
+/* Each paragraph */
+.profile-box p {
+    padding: 15px;
+
+    margin-bottom: 12px;
+
+    background-color: #f3f0ff;
+
+    border-radius: 10px;
+}

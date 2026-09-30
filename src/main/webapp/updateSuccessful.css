@@ -1,0 +1,165 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("images/IMG-20250903-WA0231.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Container */
+.container {
+    width: 500px;
+    padding: 45px 40px;
+
+    text-align: center;
+
+    background: #C9D6E3;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+
+    animation: appear 0.6s ease;
+    opacity: 0.75;
+}
+
+/* Success Heading */
+h2 {
+    color: #198754;
+
+    font-size: 32px;
+
+    margin-bottom: 20px;
+}
+
+/* Welcome Username */
+h3 {
+    color: #333;
+
+    font-size: 20px;
+
+    margin-bottom: 20px;
+}
+
+/* Messages */
+.message {
+    color: #555;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.btn {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 13px 20px;
+
+    border-radius: 10px;
+
+    background-color: #198754;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+/* Button Hover */
+.btn:hover {
+    background-color: #146c43;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 7px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Second Button */
+.btn:nth-of-type(2) {
+    background-color: #6c757d;
+}
+
+.btn:nth-of-type(2):hover {
+    background-color: #495057;
+}
+
+/* Card Animation */
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 550px) {
+
+    .container {
+        width: 90%;
+
+        padding: 35px 25px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .message {
+        font-size: 15px;
+    }
+
+    .btn {
+        font-size: 15px;
+    }
+}
+

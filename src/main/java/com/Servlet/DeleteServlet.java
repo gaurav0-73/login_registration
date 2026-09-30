@@ -34,9 +34,6 @@ public class DeleteServlet extends HttpServlet {
             RequestDispatcher rd = req.getRequestDispatcher("/delete.jsp");
 
             rd.forward(req, resp);
-        }else {
-
-            resp.getWriter().println("<h2>Account Delete Failed</h2>");
         }
     }
 }

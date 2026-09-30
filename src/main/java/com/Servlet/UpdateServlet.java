@@ -1,3 +1,4 @@
+
 package com.Servlet;
 
 import java.io.IOException;
@@ -69,18 +70,16 @@ public class UpdateServlet extends HttpServlet {
         if (result) {
 
             RequestDispatcher rd =
-                    req.getRequestDispatcher("UpdateSuccessful.jsp");
+                    req.getRequestDispatcher("/updateSuccessful.jsp");
 
             rd.forward(req, resp);
 
         } else {
 
-            resp.setContentType("text/html");
+            RequestDispatcher rd =
+                    req.getRequestDispatcher("/updateFail.jsp");
 
-            var out = resp.getWriter();
-
-            out.println("<h2>Update Failed</h2>");
-            out.println("<a href='update.jsp'>Try Again</a>");
+            rd.forward(req, resp);
         }
     }
 }

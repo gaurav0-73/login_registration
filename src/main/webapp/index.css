@@ -19,7 +19,7 @@ font-family: Arial, sans-serif;
 position: relative;
 width: 100vw;
 height: 100vh;
-background-image: url("images/IMG-20250903-WA0308.jpg");
+background-image: url("images/IMG-20250903-WA0081.jpg");
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -90,11 +90,12 @@ right: 8%;
 transform: translateY(-50%);
 width: 420px;
 padding: 35px 30px;
-background: silver;
+background: black;
 border-radius: 15px;
 text-align: center;
 z-index: 2;
 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+ opacity: 0.75;
 }
 
 /* CLOSE */

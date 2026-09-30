@@ -1,21 +1,49 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page session="true" %>
 
 <!DOCTYPE html>
+
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Update Address</title>
+    <meta charset="UTF-8">
+    <title>Update Address</title>
+
+
+<link rel="stylesheet" href="updateAddress.css">
+
 </head>
+
 <body>
 
-<h2>Update Address</h2>
+<div class="container">
 
-<form action="update" method="post">
-    <input type="hidden" name="type" value="address">
-    <input type="text" name="value" placeholder="Enter new address">
-    <button type="submit">Update Address</button>
+    <h2>Update Address</h2>
 
-</form>
+    <p class="welcome">
+        Update your address
+    </p>
+
+    <form action="update" method="post">
+
+        <input type="hidden" name="type" value="address">
+
+        <input type="text"
+               name="value"
+               placeholder="Enter new address"
+               required>
+
+        <button type="submit" class="update-btn">
+            Update Address
+        </button>
+
+    </form>
+
+    <a href="update.jsp" class="back-btn">
+        Back
+    </a>
+
+</div>
+
+
 </body>
 </html>
