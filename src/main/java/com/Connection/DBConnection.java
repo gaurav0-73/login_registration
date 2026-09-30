@@ -1,3 +1,4 @@
+
 package com.Connection;
 
 import java.sql.Connection;
@@ -5,34 +6,38 @@ import java.sql.DriverManager;
 
 public class DBConnection {
 
-   public static Connection getConnection() {
 
-       try {
-           Class.forName("com.mysql.cj.jdbc.Driver");
+    public static Connection getConnection() {
 
-           String url = System.getenv("DB_URL");
-           String username = System.getenv("DB_USERNAME");
-           String password = System.getenv("DB_PASSWORD");
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
-           System.out.println("DB_URL = " + url);
-           System.out.println("DB_USERNAME = " + username);
-           System.out.println("DB_PASSWORD exists = " + (password != null));
+            String url = System.getenv("DB_URL");
+            String username = System.getenv("DB_USERNAME");
+            String password = System.getenv("DB_PASSWORD");
 
-           Connection con = DriverManager.getConnection(
-                   url,
-                   username,
-                   password
-           );
+            System.out.println("DB_URL = " + url);
+            System.out.println("DB_USERNAME = " + username);
+            System.out.println("DB_PASSWORD exists = " + (password != null));
 
-           System.out.println("DATABASE CONNECTED SUCCESSFULLY");
+            Connection con = DriverManager.getConnection(
+                    url,
+                    username,
+                    password
+            );
 
-           return con;
+            System.out.println("DATABASE CONNECTED SUCCESSFULLY");
 
-       } catch (Exception e) {
+            return con;
 
-           System.out.println("DATABASE CONNECTION FAILED");
-           e.printStackTrace();
+        } catch (Exception e) {
 
-           return null;
-       }
-   }
+            System.out.println("DATABASE CONNECTION FAILED");
+            e.printStackTrace();
+
+            return null;
+        }
+
+    }
+    }
+
