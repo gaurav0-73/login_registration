@@ -17,8 +17,7 @@
     <p class="message"> Your information has been updated successfully.</p>
     <p class="message">Do you want to update more?</p>
     <a href="update.jsp" class="btn">Yes, Update More</a>
-    <a href="loginSuccessful.jsp" class="btn">No, Go to Profile</a>
-
+    
 </div>
 </body>
 </html>
