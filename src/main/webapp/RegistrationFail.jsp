@@ -14,7 +14,7 @@
 
 	<div class="container">
 
-		```
+		
 		<h2>Registration Failed!</h2>
 
 		<h3>Please correct the following:</h3>
@@ -23,7 +23,7 @@
 		
 		<p>• Email must start with an alphabet and contain digits also</p>
 
-		<br> <br> <a href="register.html">Try Again</a> ```
+		<br> <br> <a href="register.html">Try Again</a> 
 
 	</div>
 
