@@ -1,11 +1,10 @@
+
 package com.Servlet;
 
 import java.io.IOException;
 
-import com.nit.Dao.User;
 import com.nit.Dao.UserDao;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -13,104 +12,67 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/register")
-public class RegistrationServlet extends HttpServlet {
+@WebServlet("/update")
+public class UpdateServlet extends HttpServlet {
 
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
 
-		IO.println("===== REGISTER SERVLET CALLED =====");
+        HttpSession session = req.getSession();
 
-		String name = req.getParameter("name");
-		String email = req.getParameter("email");
-		String address = req.getParameter("address");
-		String number = req.getParameter("number");
-		String gender = req.getParameter("gender");
-		String password = req.getParameter("pass");
+        // Old name stored in session
+        String oldName = (String) session.getAttribute("username");
 
-		if (name != null) {
-			name = name.trim();
-		}
-		if (email != null) {
-			email = email.trim();
-		}
-		if (number != null) {
-			number = number.trim();
-		}
+        // Get update type and new value
+        String type = req.getParameter("type");
+        String value = req.getParameter("value");
 
-		IO.println("===== REGISTER SERVLET =====");
-		IO.println("NAME   = [" + name + "]");
-		IO.println("EMAIL  = [" + email + "]");
-		IO.println("NUMBER = [" + number + "]");
-		IO.println("GENDER = [" + gender + "]");
-		IO.println("PASS   = [" + password + "]");
+        System.out.println("TYPE = " + type);
+        System.out.println("VALUE = " + value);
 
-		// Validation
-		String emailRegex = "^[A-Za-z][A-Za-z0-9]{4,14}@gmail\\.com$";
+        UserDao dao = new UserDao();
 
-		if (name == null || name.isEmpty()
-		        || email == null || !email.matches(emailRegex)
-		        || number == null || !number.matches("\\d{10}")) {
+        boolean result = false;
 
-		    resp.setContentType("text/html");
+        // UPDATE NAME
+        if ("name".equals(type)) {
 
-		    RequestDispatcher rd =
-		            req.getRequestDispatcher("RegistrationFail.jsp");
+            result = dao.updateName(oldName, value);
 
-		    rd.forward(req, resp);
-		    return;
-		}
+            if (result) {
+                session.setAttribute("username", value);
+            }
+        }
 
-		User user = new User();
+        // UPDATE ADDRESS
+        else if ("address".equals(type)) {
 
-		user.setName(name);
-		user.setEmail(email);
-		user.setAddress(address);
-		user.setNumber(number);
-		user.setGender(gender);
-		user.setPassword(password);
+            result = dao.updateAddress(oldName, value);
 
-		UserDao dao = new UserDao();
+            if (result) {
+                session.setAttribute("userAddress", value);
+            }
+        }
 
-		// Check duplicate email or number
-		if (dao.isEmailOrNumberExists(email, number)) {
+        // UPDATE NUMBER
+        else if ("number".equals(type)) {
 
-			System.out.println("DUPLICATE EMAIL OR NUMBER!");
+            result = dao.updateNumber(oldName, value);
 
-			req.setAttribute("error", "Email or mobile number is already registered!");
+            if (result) {
+                session.setAttribute("userNumber", value);
+            }
+        }
 
-			RequestDispatcher rd = req.getRequestDispatcher("registerDuplicate.jsp");
+        // SUCCESS
+        if (result) {
 
-			rd.forward(req, resp);
+            resp.sendRedirect("updateSuccessful.jsp");
 
-			return;
-		}
+        } else {
 
-		// Register user
-		boolean result = dao.registerUser(user);
-
-		if (result) {
-
-			HttpSession session = req.getSession();
-
-			session.setAttribute("username", name);
-			session.setAttribute("name", name);
-			session.setAttribute("email", email);
-			session.setAttribute("address", address);
-			session.setAttribute("number", number);
-			session.setAttribute("gender", gender);
-
-			RequestDispatcher rd = req.getRequestDispatcher("RegistrationSuccess.jsp");
-
-			rd.forward(req, resp);
-
-		} else {
-
-			resp.setContentType("text/html");
-
-			RequestDispatcher rd = req.getRequestDispatcher("RegistrationFail.jsp");
-
-			rd.forward(req, resp);
-		}
-	}
+            resp.sendRedirect("updateFail.jsp");
+        }
+    }
 }
